@@ -13,7 +13,7 @@ int main(){
 		scanf("%d",&num1);
 		printf("Enter the 2nd number\n");
 		scanf("%d",&num2);
-		printf("Enter the operator\n1 for addition\n2 for subtraction\n3 for multiplication\n4 for divison\n5 for greater than or equal to\n6 for less than or equal to\n7 for equal to\n8 for modulus\n9 for not equal to\n");
+		printf("Enter the operator\n1 for addition\n2 for subtraction\n3 for multiplication\n4 for divison\n5 for greater than or equal to\n6 for less than or equal to\n7 for equal to\n8 for modulus\n9 for not equal to\n10 for less than");
 		scanf("%d",&op);
 		switch(op){
 			case 1:
@@ -32,13 +32,13 @@ int main(){
 				if(num1>=num2)	
 					printf("yes %d is greater than %d\n",num1,num2);
 				else
-					printf("no %d is less than %d\n",num2,num1);
+					printf("no %d is less than %d\n",num1,num2);
 				break;
 			case 6:
 				if(num1<=num2)	
 					printf("yes %d is less than %d\n",num1,num2);
 				else
-					printf("no %d is greater than %d\n",num2,num1);
+					printf("no %d is greater than %d\n",num1,num2);
 				break;
 			case 7:
 				if(num1==num2)	
@@ -54,6 +54,12 @@ int main(){
 			break;
 			case 8:
 				printf("Ans: %d\n",num1%num2);
+			break;
+			case 10:
+			if(num1<num2)	
+					printf("yes %d less than %d\n",num1,num2);
+			else
+					printf("no %d is greater than %d\n",num1,num2);
 			break;
 		}
 		
