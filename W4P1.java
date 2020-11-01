@@ -1,4 +1,4 @@
-
+import java.util.*;
 abstract class Shape{
 	int l,b;
 	Shape(int len,int bre){
@@ -44,11 +44,12 @@ class Circle extends Shape{
 public class W4P1 {
 
 	public static void main(String[] args) {
-		Triangle t1 = new Triangle(7,7);
+		Scanner input = new Scanner(System.in);
+		Triangle t1 = new Triangle(input.nextInt(),input.nextInt());
 		t1.printArea();
-		Rectangle r1 = new Rectangle(7,7);
+		Rectangle r1 = new Rectangle(input.nextInt(),input.nextInt());
 		r1.printArea();
-		Circle c1 = new Circle(5);
+		Circle c1 = new Circle(input.nextInt());
 		c1.printArea();
 	}
 
