@@ -1,3 +1,5 @@
+import java.util.*;
+
 class ageException extends Exception{
     int detail;
     ageException(int a){
@@ -39,8 +41,9 @@ class Son extends Father{
 public class lab8{
     public static void main(String[] args){
         try{
-            Father f = new Father(32);
-            Son s = new Son(34,f);
+            Scanner input = new Scanner(System.in);
+            Father f = new Father(input.nextInt());
+            Son s = new Son(input.nextInt(),f);
             s.display();
         }catch(Exception e){
             System.out.println(e);
