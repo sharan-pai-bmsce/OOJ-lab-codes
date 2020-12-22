@@ -43,7 +43,7 @@ public class lab8{
                 throw new ageException(f.age);
             if(s.age<=0)
                 throw new ageException(s.age);
-                s.display();
+            s.display();
         }catch(Exception e){
             System.out.println(e);
         }
