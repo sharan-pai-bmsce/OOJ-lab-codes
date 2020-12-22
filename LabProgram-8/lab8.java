@@ -13,9 +13,6 @@ class Father{
     int age;
     Father(int age) throws ageException{
         this.age = age;
-        if(this.age<=0){
-            throw new ageException(this.age);
-        }
     }
     void display(){
         System.out.println("Father's age:"+this.age);
@@ -27,10 +24,6 @@ class Son extends Father{
     Son(int age,Father f) throws ageException{
         super(age);
         this.f = f;
-        if(this.age>=this.f.age){
-            //System.out.println(f.age);
-            throw new ageException(this.age);
-        }
     }
     void display(){
         this.f.display();
@@ -39,12 +32,18 @@ class Son extends Father{
 }
 
 public class lab8{
-    public static void main(String[] args){
+    public static void main(String[] args) throws ageException{
+        Scanner input = new Scanner(System.in);
+        Father f = new Father(input.nextInt());
+        Son s = new Son(input.nextInt(),f);
         try{
-            Scanner input = new Scanner(System.in);
-            Father f = new Father(input.nextInt());
-            Son s = new Son(input.nextInt(),f);
-            s.display();
+            if(s.age>=f.age)
+                throw new ageException(s.age);
+            if(f.age<=0)
+                throw new ageException(f.age);
+            if(s.age<=0)
+                throw new ageException(s.age);
+                s.display();
         }catch(Exception e){
             System.out.println(e);
         }
