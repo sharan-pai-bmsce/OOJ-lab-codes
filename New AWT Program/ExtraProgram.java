@@ -14,6 +14,7 @@ import java.awt.event.WindowEvent;
  * 
  */
 // Lab Program-2
+/*
 public class ExtraProgram extends Applet implements MouseListener,MouseMotionListener {
 
 		String msg="";
@@ -89,21 +90,23 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 	public void paint(Graphics g) {
 		g.drawString(msg, x, y);
 	}
-}
+}*/
 
 //Lab Program-1
 
-/*public class ExtraProgram extends Frame implements MouseListener,MouseMotionListener{
+public class ExtraProgram extends Frame implements MouseListener,MouseMotionListener{
 	String msg = "";
 	int x = 0,y = 0;
 	public ExtraProgram(){
 		addMouseListener(this);
 		addMouseMotionListener(this);
+		this.setBackground(Color.BLACK);
 		addWindowListener(new MyWindow());
 	}
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		msg="mouse clicked "+e.getClickCount();
+		msg="mouse clicked "+e.getClickCount()+" times";
+		setForeground(Color.ORANGE);
 		repaint();
 	}
 	
@@ -111,6 +114,7 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 	public void mouseEntered(MouseEvent e) {
 		x = getWidth()/2;
 		y = getHeight()/2;
+		setForeground(Color.YELLOW);
 		msg = "mouse entered";
 		repaint();
 	}
@@ -119,6 +123,7 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 		// TODO Auto-generated method stub
 		x = 100;
 		y = 100;
+		setForeground(Color.GREEN);
 		msg = "mouse exited";
 		repaint();
 	}
@@ -126,7 +131,8 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 	public void mousePressed(MouseEvent e) {
 		x = e.getX();
 		y = e.getY();
-		msg = "Clicked";
+		msg = "Pressed at "+x+" "+y;
+		setForeground(Color.BLUE);
 		repaint();
 	}
 	@Override
@@ -134,6 +140,7 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 		// TODO Auto-generated method stub
 		x = e.getX();
 		y = e.getY();
+		setForeground(Color.RED);
 		msg = "x = "+x+"y = "+y;
 		repaint();
 	}
@@ -143,7 +150,7 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 		g.drawString(msg,x,y);
 	}
 	public static void main(String[] args) {
-		Sample s = new Sample();
+		ExtraProgram s = new ExtraProgram();
 		s.setSize(300, 300);
 		s.setVisible(true);
 	}
@@ -153,7 +160,11 @@ public class ExtraProgram extends Applet implements MouseListener,MouseMotionLis
 	}
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		
+		x = e.getX();
+		y = e.getY();
+		msg = "Mouse Released "+x+" "+y;
+		setForeground(Color.CYAN);
+		repaint();
 	}
 	
 }
@@ -164,4 +175,4 @@ class MyWindow extends WindowAdapter{
 		super.windowClosing(e);
 		System.exit(0);
 	}
-}*/
+}
